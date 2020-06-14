@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %} Index {% endblock %}
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block body %}
+<br>
+{{ include('user/slideshow.twig') }}
+{{ include('user/search.twig') }}
+{{ include('user/recruitmentPosts.twig') }}
+{% endblock %}

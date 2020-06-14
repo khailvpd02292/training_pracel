@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+{% block title %} RecruitmentDetail {% endblock %}
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="card">
+    <div class="card-body">
+        <div class="recruitment-header row">
+            <div class="logo-company col-3">
+                <div class="logo-background" style="background-image: url('/images/fpt.jpg')"></div>
+            </div>
+            <div class="title-company col-sm-9 col-lg-6">
+                <p>Junior React Native Dev (JavaScript)</p>
+                <p>Công ty Cổ phần Đào tạo trực tuyến Unica</p>
+                <p>Địa chỉ: Tầng 4 toàn nhà Novas Hải Châu, Đà nẵng</p>
+                <p><i class="fa fa-clock-o"></i> Hạn nộp hồ sơ : 14/07/2020</p>
+            </div>
+            <div class="upload-btn-wrapper col-lg-3 col-12">
+                <button class="btn btn-upload">Ứng tuyển ngay</button>
+                <input id="custome-input" type="file" style="display: none;" class="custom-file-input" name="myfile" /><br>
+                <label id="upload-file-name" class="name-file-upload">Chưa có file nào được chọn!</label>
+            </div>
+        </div>
+        <div class="recruitment-wapper row pl-5 pt-5 pr-5">
+            <div class="decription">
+                <h3>MÔ TẢ CÔNG VIỆC</h3>
+                <p>
+                    - Công ty Cổ phần Quảng cáo trực tuyến 24H được biết đến qua hai website tin tức tổng hợp hàng đầu
+                    Việt Nam là 24h và Eva. Chúng tôi cần tuyển Lập trình viên PHP với mô tả công việc như sau:<br>
+
+                    - Tham gia xây dựng, phát triển các website tin tức - giải trí.<br>
+
+                    - Xử lý các lỗi phát sinh trong quá trình vận hành website.<br>
+
+                    - Tối ưu hóa code, tối ưu hóa truy xuất cơ sở dữ liệu để các website có thể chịu tải được nhiều
+                    triệu lượt truy cập/ngày.
+                </p>
+            </div>
+            <div class="decription">
+                <h3>YÊU CẦU ỨNG VIÊN</h3>
+                <p>
+                    - Hiểu biết tốt về nguyên lý lập trình web, nguyên lý hoạt động của các website, giao thức HTTP.<br>
+
+                    - Hiểu biết tốt về PHP, JS, Mysql.<br>
+
+                    - Thành thạo các câu lệnh SQL.<br>
+
+                    - Thành thạo Stored Procedure/Trigger.<br>
+
+                    - Có 1-2 năm kinh nghiệm làm PHP, JS, MySQL, đã hoặc đang làm cho các công ty truyền thông
+                    online.<br>
+
+                    - Có khả năng phát hiện nguyên nhân, xử lý lỗi lập trình nhanh.<br>
+
+                    - Có khả năng làm việc theo Agile/Scrum.<br>
+
+                    - Có khả năng làm việc theo nhóm tốt.
+                </p>
+            </div>
+            <div class="decription">
+                <h3>QUYỀN LỢI ĐƯỢC HƯỞNG</h3>
+                <p>
+                    - Môi trường chuyên nghiệp năng động, khuyến khích sáng tạo , thi đua, thể hiện ý tưởng<br>
+
+                    - Có cơ hội thăng tiến, thu nhập KHỦNG theo hiệu quả công việc.<br>
+
+                    - Chủ động trong công việc, với hệ thống đánh giá KPIs rõ ràng, minh bạch, công bằng.<br>
+
+                    - Được nghỉ thứ 7, chủ nhật hàng tuần.<br>
+
+                    - Tham gia các hoạt động văn hóa mang màu sắc đặc trưng của 24h: Team building, thi ảnh:"24h sững
+                    sờ, khó đỡ, thánh sống ảo,... và hàng loạt các hoạt động sinh hoạt tập thể thú vị, hấp dẫn diễn ra
+                    hàng tháng, quý.<br>
+
+                    - Bảo hiểm xã hội, bảo hiểm y tế theo quy định Nhà nước.<br>
+
+                    - Bảo hiểm sức khỏe tại các bệnh viện lớn (Vinmec, Hồng Ngọc, ...).<br>
+
+                    - Du lịch, teambuilding 2 lần/năm.<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+<script>
+// $(".custom-file-input").on("change", function() {
+//     var fileName = $(this).val().split("\\").pop();
+//     $(this).siblings(".custom-file").addClass("selected").html(fileName);
+//   });
+
+// upload-file-name
+const btnUpload = document.querySelector(".btn-upload");
+const uploadInput = document.querySelector ("#custome-input");
+const filenameLabel = document.querySelector("#upload-file-name");
+btnUpload.addEventListener('click', function() {
+    uploadInput.click();
+});
+uploadInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    filenameLabel.innerText = file.name;
+});
+</script>
+{% endblock %}
